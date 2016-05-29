@@ -1,0 +1,11 @@
+server:
+    build: .
+    environment:
+        NODE_ENV: development
+        APP_PORT: 3000
+    ports:
+        - '3000:3000'
+    volumes:
+        - .:/home/app/xyz
+        - /home/app/xyz/node_modules
+    command: start:dev
