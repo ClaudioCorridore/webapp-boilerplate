@@ -1,13 +1,12 @@
 'use strict';
 
-const
-    koa = require('koa'),
-    app = koa(),
-    PORT = process.env.APP_PORT;
+const koa = require('koa');
+const app = koa();
+const PORT = process.env.APP_PORT;
 
 // logger
 
-app.use(function *(next){
+app.use(function *(next) {
     const start = new Date();
     yield next;
     const ms = new Date() - start;
@@ -16,8 +15,9 @@ app.use(function *(next){
 
 // response
 
-app.use(function *(){
+app.use(function *(next) {
     this.body = 'Hello World';
+    yield next;
 });
 
 app.listen(PORT, () => {

@@ -15,5 +15,5 @@ RUN chown -R app:app $HOME/*
 USER app
 WORKDIR $HOME/${APP_NAME}
 RUN npm install && npm cache clean
-ENTRYPOINT ["/usr/local/bin/npm", "run"]
+ENTRYPOINT ["npm", "run"]
 CMD ["start"]

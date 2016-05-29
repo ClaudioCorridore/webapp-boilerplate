@@ -5,8 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "prestart:dev": "npm run lint:js",
     "start:dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:js": "xo",
+    "test": "xo"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,14 @@
     "koa": "^1.2.0"
   },
   "devDependencies": {
-    "nodemon": "^1.9.2"
+    "ava": "^0.15.1",
+    "nodemon": "^1.9.2",
+    "xo": "^0.15.1"
+  },
+  "xo": {
+    "esnext": true,
+    "space": 4,
+    "rules": {
+    }
   }
 }
