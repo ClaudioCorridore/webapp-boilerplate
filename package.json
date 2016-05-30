@@ -8,7 +8,8 @@
     "prestart:dev": "npm run lint:js",
     "start:dev": "nodemon app.js",
     "lint:js": "xo",
-    "test": "xo"
+    "pretest": "npm run lint:js",
+    "test": "ava"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
   "xo": {
     "esnext": true,
     "space": 4,
+    "envs": ["node", "browser"],
     "rules": {
     }
   }
