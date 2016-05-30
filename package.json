@@ -5,11 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "prestart:dev": "npm run lint:js",
     "start:dev": "nodemon src/index.js",
     "lint:js": "xo",
     "pretest": "npm run lint:js",
-    "test": "ava"
+    "test": "NODE_ENV=test ava"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +21,8 @@
   "devDependencies": {
     "ava": "^0.15.1",
     "nodemon": "^1.9.2",
+    "supertest": "^1.2.0",
+    "supertest-as-promised": "^3.1.0",
     "xo": "^0.15.1"
   },
   "xo": {

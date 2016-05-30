@@ -1,11 +1,17 @@
-import test from 'ava';
+const test = require('ava');
+const superagent = require('supertest-as-promised');
+const app = require('../src/index');
 
-test('foo', t => {
-    t.pass();
-});
+function request() {
+    return superagent(app.listen());
+}
 
-test('bar', async t => {
-    const bar = Promise.resolve('bar');
+test('get:Success', async t => {
+    t.plan(2);
 
-    t.is(await bar, 'bar');
+    const res = await request()
+           .get('/');
+
+    t.is(res.status, 200);
+    t.is(res.text, 'Hello World');
 });

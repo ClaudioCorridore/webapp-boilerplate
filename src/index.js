@@ -6,8 +6,11 @@ const app = koa();
 const routeMain = require('./routes/main');
 const PORT = process.env.APP_PORT;
 
+if (process.env.NODE_ENV !== 'test') {
+    app.use(logger());
+}
+
 app
-    .use(logger())
     .use(routeMain.routes())
     .use(routeMain.allowedMethods());
 
