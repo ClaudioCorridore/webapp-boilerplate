@@ -1,7 +1,7 @@
-# Version: 0.0.2
-FROM node:6.2.1
+# Version: 0.0.3
+FROM node:6.5.0
 MAINTAINER Claudio Corridore <claudio.corridore@gmail.com>
-ENV REFRESHED_AT 2016-06-06
+ENV REFRESHED_AT 2016-09-01
 
 RUN useradd --user-group --create-home --shell /bin/false app
 
